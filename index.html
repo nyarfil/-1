@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>読売マイラーズカップ 競馬分析レポート</title>
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            border-bottom: 3px solid #1e50a2;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #1e50a2;
+            font-size: 28px;
+        }
+        h2 {
+            border-left: 6px solid #1e50a2;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            background-color: #f0f5ff;
+            padding: 8px 10px;
+        }
+        h3 {
+            border-bottom: 2px dashed #3366cc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #333;
+            font-size: 20px;
+        }
+        h4 {
+            margin-top: 25px;
+            color: #1e50a2;
+            font-size: 18px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .horse-data {
+            background-color: #f5f8ff;
+            border-left: 4px solid #3366cc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        .horse-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1e50a2;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .rating {
+            display: inline-block;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        .rating-s {
+            background-color: #e60033;
+            color: white;
+        }
+        .rating-a {
+            background-color: #f08300;
+            color: white;
+        }
+        .rating-b {
+            background-color: #009944;
+            color: white;
+        }
+        .rating-c {
+            background-color: #0068b7;
+            color: white;
+        }
+        .rating-d {
+            background-color: #9b7cb6;
+            color: white;
+        }
+        .risk {
+            color: #e60033;
+            font-weight: normal;
+        }
+        .strength {
+            color: #009944;
+            font-weight: normal;
+        }
+        .key-point {
+            font-weight: bold;
+            background-color: #ffffcc;
+            padding: 0 3px;
+        }
+        ul {
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .race-info {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .race-prediction {
+            background-color: #f0f5ff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #d0e0ff;
+        }
+        .betting-tips {
+            background-color: #fff0f5;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ffd0e0;
+        }
+        .top-pick {
+            font-weight: bold;
+            color: #e60033;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f5ff;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>読売マイラーズカップ 競馬分析レポート</h1>
+        
+        <div class="race-info">
+            <p><strong>レース名:</strong> 読売マイラーズカップ（GII）</p>
+            <p><strong>開催場所:</strong> 京都競馬場</p>
+            <p><strong>コース:</strong> 芝1600m（外回り）</p>
+            <p><strong>出走頭数:</strong> 10頭</p>
+        </div>
+
+        <h2>レース概況と展開予想</h2>
+        <div class="race-prediction">
+            <p>出走メンバーを見ると、明確にハナを主張するのは4枠4番のビーアストニッシドでしょう。他には7枠8番のセオがある程度の位置を取りに行く可能性が高いですが、ビーアストニッシドを行かせて番手で控えると思われます。少頭数（10頭立て）ということもあり、各馬が互いの出方を伺い、無理な先行争いは発生しにくいと考えられます。</p>
+            <p>したがって、レースはビーアストニッシドが単騎で逃げ、全体としては落ち着いた <strong class="key-point">スローペース</strong> で流れる可能性が高いと予想します。向正面の長い直線では隊列が縦長になることも考えられますが、大きな隊列の変動はないでしょう。</p>
+            <p>勝負所は3コーナー手前からです。ここから京都名物の坂を下りながら各馬が徐々にペースを上げていきます。4コーナーでは馬群が凝縮し、最後の直線に入ります。直線は平坦で長いため、坂の下りからスピードに乗った後の <strong class="key-point">瞬発力</strong> と <strong class="key-point">持続力</strong> が問われる、文字通りの <strong class="key-point">上がり勝負</strong> となるでしょう。ビーアストニッシドがどこまで粘れるか、そして後方待機組がどれだけ速い上がりを使えるかが焦点となります。内枠でロスなく立ち回った馬と、外からスムーズに加速できる馬にチャンスが生まれる展開です。</p>
+        </div>
+
+        <h3>予想される展開による有利不利</h3>
+        <h4>有利:</h4>
+        <ul>
+            <li><strong>ジュンブロッサム:</strong> スローからの上がり勝負、高速馬場、直線の長いコースといった得意条件が全て揃います。持ち前の強烈な瞬発力を最大限に活かせる展開となりそうです。</li>
+            <li><strong>グラティアス:</strong> 近走の充実ぶりが示すように、瞬発力と持続力のバランスが良く、速い上がりを使えます。京都芝1600m外回りコース適性も高く、展開問わず力を出せますが、上がり勝負になっても十分に通用します。</li>
+            <li><strong>セオ:</strong> 先行して自分のペースで運べるため、スローペースは歓迎です。京都コース適性も高く、坂の下りからスムーズに加速し、直線での粘り強さを活かせます。内目の枠（8番ですが、外枠の中でも内寄り）もプラスに働く可能性があります。</li>
+            <li><strong>ニホンピロキーフ:</strong> 京都芝1600m外回りコース適性が高く、ある程度の位置から堅実に速い上がりを使えます。スローからの上がり勝負にも対応でき、馬群を捌ける器用さもあります。</li>
+            <li><strong>レイベリング:</strong> 能力が高く、高速馬場での瞬発力勝負が得意です。休み明けが鍵ですが、能力を出し切れれば、この展開なら上位に食い込むだけの決め手を持っています。</li>
+        </ul>
+
+        <h4>不利:</h4>
+        <ul>
+            <li><strong>ビーアストニッシド:</strong> 単騎逃げに持ち込めても、後続が脚を溜める展開になり、直線で捕まる可能性が非常に高いです。近走のパフォーマンスからも、重賞レベルの相手に逃げ粘る力は不足していると見られます。</li>
+            <li><strong>ミスタージーティー、ロングラン:</strong> スタミナと持続力が持ち味であり、マイルのスピードや極端な瞬発力勝負に対応できるか懸念があります。スローからの上がり勝負では、他の切れ味鋭い馬に分が悪い可能性があります。</li>
+            <li><strong>ホウオウリアリティ、エアファンディタ:</strong> 近走の不振や、全盛期ほどのスピード・瞬発力がなくなってきている現状では、高速馬場での上がり勝負に対応するのは厳しいでしょう。</li>
+        </ul>
+
+        <h2>出走馬分析</h2>
+        
+        <div class="horse-data">
+            <div class="horse-name">グラティアス <span class="rating rating-s">S</span></div>
+            <p><strong>想定騎手:</strong> 川田将雅</p>
+            <p><strong>想定人気:</strong> 7番人気 / 16.5倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li><span class="strength">瞬発力と持続力のバランスが優れたマイラー</span></li>
+                <li><span class="strength">近走で急成長中、勢いがある</span></li>
+                <li><span class="strength">京都芝1600m外回りコース適性が高い</span></li>
+                <li><span class="strength">内枠から前目の位置取りが可能</span></li>
+                <li><span class="strength">コンスタントに速い上がりを使える</span></li>
+            </ul>
+            <p><strong>得意条件:</strong> 距離1600m、変則的なコース形状、京都芝外回り、枠順を活かした好位置キープ、外差し</p>
+            <p><strong>不安材料:</strong> <span class="risk">絶対的スピードでは一歩劣る可能性、馬群の中での立ち回り</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-s">S</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 1〜3着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: ◎, 実力: ◎, 調子: ◎, コース適性: ◎, 馬場適性: ◎, 総合適性: S</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">ジュンブロッサム <span class="rating rating-a">A</span></div>
+            <p><strong>想定騎手:</strong> 松山弘平</p>
+            <p><strong>想定人気:</strong> 3番人気 / 5.9倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li><span class="strength">絶対的なスピードとキレを持つ</span></li>
+                <li><span class="strength">スローからの上がり勝負、瞬発力勝負が得意</span></li>
+                <li>中団からの差し</li>
+                <li><span class="risk">気性に難があり、挙動不審な場面も</span></li>
+                <li><span class="strength">高速馬場、直線の長いコースが合う</span></li>
+            </ul>
+            <p><strong>得意条件:</strong> 上がり勝負、高速馬場、スローペース、少頭数、好位置確保</p>
+            <p><strong>不安材料:</strong> <span class="risk">気性面、内枠からの立ち回り、ケチのつきそうな場面</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-a">A</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 1〜3着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: ◎, 実力: ◎, 調子: 〇, コース適性: ◎, 馬場適性: ◎, 総合適性: A</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">セオ <span class="rating rating-a">A</span></div>
+            <p><strong>想定騎手:</strong> 和田竜二</p>
+            <p><strong>想定人気:</strong> 2番人気 / 4.4倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li>安定感のある先行/好位差し馬</li>
+                <li><span class="strength">極端に消える脚質ではない</span></li>
+                <li><span class="strength">京都コース実績良好</span></li>
+                <li><span class="strength">毎レース安定して結果を出している</span></li>
+                <li><span class="risk">勝ち切るための一段上のキレ不足</span></li>
+            </ul>
+            <p><strong>得意条件:</strong> 自分のペースでの好位先行、馬群から離れた外側の進路確保、中団からの馬群を捌ける展開</p>
+            <p><strong>不安材料:</strong> <span class="risk">決め手不足、ペースが上がったときの対応力</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-a">A</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 1〜3着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: 〇, 実力: ◎, 調子: ◎, コース適性: ◎, 馬場適性: 〇, 総合適性: A</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">ニホンピロキーフ <span class="rating rating-b">B</span></div>
+            <p><strong>想定騎手:</strong> 池添謙一</p>
+            <p><strong>想定人気:</strong> 8番人気 / 24.2倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li>中団からの差し脚質</li>
+                <li><span class="strength">京都芝マイル実績あり（京都金杯、マイラーズC）</span></li>
+                <li><span class="strength">器用な立ち回りが可能</span></li>
+                <li><span class="strength">堅実に走るタイプ</span></li>
+                <li><span class="risk">フィナーレに迫力不足の可能性</span></li>
+            </ul>
+            <p><strong>得意条件:</strong> 1600m、器用に立ち回れる展開、内枠から中団で運べる展開</p>
+            <p><strong>不安材料:</strong> <span class="risk">超高速決着、勝ち負けするための突き抜ける末脚の欠如</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-b">B</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 3〜5着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: 〇, 実力: 〇, 調子: 〇, コース適性: ◎, 馬場適性: 〇, 総合適性: B</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">レイベリング <span class="rating rating-b">B</span></div>
+            <p><strong>想定騎手:</strong> 藤岡佑介</p>
+            <p><strong>想定人気:</strong> 6番人気 / 14.3倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li>高速スピードと瞬発力勝負に強み</li>
+                <li><span class="strength">直線の長いコースが合う</span></li>
+                <li><span class="risk">3ヶ月半の休み明け</span></li>
+                <li><span class="risk">前走は想定を下回る内容</span></li>
+                <li><span class="strength">能力的には優れたマイラー</span></li>
+            </ul>
+            <p><strong>得意条件:</strong> 1400-1600m、高速馬場、スローからの瞬発力勝負</p>
+            <p><strong>不安材料:</strong> <span class="risk">休み明け、極端な立ち遅れ、モタれる場面での対応</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-b">B</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 2〜6着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: ◎, 実力: ◎, 調子: △, コース適性: 〇, 馬場適性: ◎, 総合適性: B</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">ミスタージーティー <span class="rating rating-c">C</span></div>
+            <p><strong>想定騎手:</strong> 武豊</p>
+            <p><strong>想定人気:</strong> 5番人気 / 9.6倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li>スタミナと持続力が持ち味</li>
+                <li><span class="strength">安定感のある好位差し馬</span></li>
+                <li><span class="risk">マイル戦ではスピード不足の懸念</span></li>
+                <li><span class="risk">極端な瞬発力勝負には不向き</span></li>
+                <li>長距離よりの適性を持つ</li>
+            </ul>
+            <p><strong>得意条件:</strong> ペースの上がる展開、持久力勝負、展開の流れる場面</p>
+            <p><strong>不安材料:</strong> <span class="risk">スローからの上がり勝負、極端な瞬発力勝負</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-c">C</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 5〜8着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: △, 実力: 〇, 調子: 〇, コース適性: △, 馬場適性: △, 総合適性: C</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">ロングラン <span class="rating rating-c">C</span></div>
+            <p><strong>想定騎手:</strong> 福永祐一</p>
+            <p><strong>想定人気:</strong> 4番人気 / 8.5倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li>持続力と粘り強さが持ち味</li>
+                <li><span class="strength">コンスタントな成績を残している</span></li>
+                <li><span class="risk">スピード不足が懸念される</span></li>
+                <li><span class="risk">マイル戦では距離が短い可能性</span></li>
+                <li>しぶとさが魅力の競走馬</li>
+            </ul>
+            <p><strong>得意条件:</strong> 力勝負、淡々としたペース、粘り込むレース</p>
+            <p><strong>不安材料:</strong> <span class="risk">スローからの瞬発力勝負、マイル戦のスピード</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-c">C</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 6〜9着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: △, 実力: 〇, 調子: 〇, コース適性: △, 馬場適性: 〇, 総合適性: C</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">エアファンディタ <span class="rating rating-c">C</span></div>
+            <p><strong>想定騎手:</strong> 岩田康誠</p>
+            <p><strong>想定人気:</strong> 9番人気 / 36.8倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li><span class="strength">かつては高い能力を示した</span></li>
+                <li><span class="risk">近走は明らかな能力低下</span></li>
+                <li><span class="risk">年齢による衰えが見られる</span></li>
+                <li><span class="risk">高速馬場での瞬発力勝負は厳しい</span></li>
+                <li>後方から一気の差し脚</li>
+            </ul>
+            <p><strong>得意条件:</strong> かつては高速馬場での直線勝負</p>
+            <p><strong>不安材料:</strong> <span class="risk">近走の成績不振、全盛期からの衰え</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-c">C</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 8〜10着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: △, 実力: △, 調子: ×, コース適性: 〇, 馬場適性: △, 総合適性: C</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">ホウオウリアリティ <span class="rating rating-c">C</span></div>
+            <p><strong>想定騎手:</strong> 北村友一</p>
+            <p><strong>想定人気:</strong> 10番人気 / 56.3倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li><span class="risk">直近5走は振るわない成績</span></li>
+                <li><span class="risk">7歳馬で年齢による衰えが顕著</span></li>
+                <li><span class="risk">かつての勢いは見られない</span></li>
+                <li><span class="risk">近走で見せ場なく敗戦</span></li>
+                <li>前走よりは休養明けで改善の余地あり</li>
+            </ul>
+            <p><strong>得意条件:</strong> かつては京都芝マイルも得意としていた</p>
+            <p><strong>不安材料:</strong> <span class="risk">年齢による衰え、近走の不振、自信喪失の可能性</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-c">C</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 8〜10着</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: △, 実力: △, 調子: ×, コース適性: 〇, 馬場適性: △, 総合適性: C</p>
+        </div>
+
+        <div class="horse-data">
+            <div class="horse-name">ビーアストニッシド <span class="rating rating-d">D</span></div>
+            <p><strong>想定騎手:</strong> 吉田隼人</p>
+            <p><strong>想定人気:</strong> 1番人気 / 3.8倍 （netkeiba想定より）</p>
+            <p><strong>各セクション要点:</strong></p>
+            <ul>
+                <li>単騎逃げが主戦術</li>
+                <li><span class="risk">近走の勝利はクラスの低い相手</span></li>
+                <li><span class="risk">重賞レベルに通用するか大きな疑問</span></li>
+                <li><span class="risk">逃げて粘る力は不足している</span></li>
+                <li><span class="risk">直線で失速する傾向が強い</span></li>
+                <li>6歳馬で能力に限界がある</li>
+            </ul>
+            <p><strong>得意条件:</strong> 逃げ切れる条件（相手関係・距離）</p>
+            <p><strong>不安材料:</strong> <span class="risk">実力不足、グレードレース非対応、直線での失速</span></p>
+            <p><strong>今回のレースでの評価:</strong> <span class="rating rating-d">D</span></p>
+            <p><strong>今回のレースでの想定順位:</strong> 10着前後</p>
+            <p><strong>データ的な適正度:</strong> 脚質適性: ×, 実力: ×, 調子: △, コース適性: △, 馬場適性: △, 総合適性: D</p>
+        </div>
+
+        <h2>最終分析と買い目推奨</h2>
+        <h3>最終的な印:</h3>
+        <ul>
+            <li><strong class="top-pick">◎ グラティアス:</strong> 近走の充実ぶり、京都芝1600m外回りコース適性、そして調教から伺える状態の良さを高く評価します。安定して力を出せるタイプであり、展開問わず上位争いが期待できます。</li>
+            <li><strong>◯ ジュンブロッサム:</strong> 能力の絶対値はメンバー中でも最上位級です。気性面に課題はありますが、京都芝1600m外回りのコースと想定されるスローからの上がり勝負は、この馬の強烈な瞬発力を最大限に活かせる舞台です。能力全開なら勝ち負け必至と見ます。</li>
+            <li><strong>▲ セオ:</strong> 先行して自分の競馬ができる安定感が魅力です。京都芝1600m外回りコース適性も高く、内目の枠からロスなく運べれば、直線での粘り込みで馬券圏内に入る可能性が高いです。連軸として信頼できます。</li>
+            <li><strong>△ ニホンピロキーフ:</strong> 昨年のマイラーズカップ3着、京都金杯3着と、この舞台での実績は侮れません。堅実に走るタイプであり、展開が嵌れば上位争いに加われる力を持っています。</li>
+            <li><strong>☆ レイベリング:</strong> 3ヶ月半ぶりの休み明けが懸念材料ですが、能力は高く、瞬発力はメンバー中でもトップクラスです。もし能力を出し切れる状態にあれば、想定されるスローからの上がり勝負で、前が止まるような展開になった際に一気に浮上してくる可能性があります。穴として注目します。</li>
+        </ul>
+
+        <div class="betting-tips">
+            <h3>推奨買い目:</h3>
+            <h4>馬連:</h4>
+            <ul>
+                <li>◎－◯ （グラティアス－ジュンブロッサム）</li>
+                <li>◎－▲ （グラティアス－セオ）</li>
+                <li>◎－☆ （グラティアス－レイベリング）</li>
+            </ul>
+
+            <h4>3連複:</h4>
+            <ul>
+                <li>◎－◯－▲ （グラティアス－ジュンブロッサム－セオ）</li>
+            </ul>
+
+            <h4>3連単フォーメーション:</h4>
+            <p><strong>1着：◎ （グラティアス）</strong><br>
+            2着：◯, ▲ （ジュンブロッサム, セオ）<br>
+            3着：◯, ▲, ☆ （ジュンブロッサム, セオ, レイベリング）</p>
+
+            <p><strong>1着：◯ （ジュンブロッサム）</strong><br>
+            2着：◎, ▲ （グラティアス, セオ）<br>
+            3着：◎, ▲, ☆ （グラティアス, セオ, レイベリング）</p>
+
+            <h3>買い目選択の理由:</h3>
+            <p>この買い目は、ステップ8で最高評価（S）を与えたグラティアスを最も信頼できる軸とし、その安定感と近走の充実ぶり、そして京都芝1600m外回りコースへの高い適性を重視したものです。想定されるスローからの上がり勝負、そして高速馬場という条件は、グラティアスの瞬発力と持続力のバランスの取れた末脚を活かすのに最適と考えられます。想定人気が7番人気という点も、馬券的な妙味があり、積極的に狙いたい要素です。</p>
+            
+            <p>相手の本線としては、能力の絶対値がメンバー中で最上位級と分析したジュンブロッサム（◯）と、先行力と京都芝1600m外回りコースでの安定感が際立つセオ（▲）を選びました。ジュンブロッサムは気性面に課題があるものの、想定されるスローからの上がり勝負は最も得意とする展開であり、能力を出し切れれば他の馬を圧倒する可能性すら秘めています。セオは勝ち切る決め手に欠ける懸念はあるものの、堅実に自分の力を出し切れるタイプであり、馬券圏内への信頼度は非常に高いと判断しました。この3頭（グラティアス、ジュンブロッサム、セオ）が上位を形成する可能性が最も高いと分析しています。</p>
+            
+            <p>さらに、穴として、秘められた能力と強烈な瞬発力を持つレイベリング（☆）を3連単の3着候補に含めました。3ヶ月半ぶりの休み明けという大きな不安材料はありますが、もし能力を出し切れる状態にあれば、想定されるスローからの上がり勝負で、前が止まるような展開になった際に一気に浮上してくる可能性があります。</p>
+        </div>
+
+        <h3>リスク分析:</h3>
+        <ul>
+            <li><span class="risk">グラティアスが想定外の凡走をした場合、ほとんどの買い目が外れるリスクがあります。</span></li>
+            <li><span class="risk">ジュンブロッサムの気性面やレイベリングの休み明けといった不安材料が悪い方に出た場合、買い目が外れるリスクがあります。</span></li>
+            <li><span class="risk">印を回さなかった馬（特にニホンピロキーフなど）が上位に激走した場合、対応できません。</span></li>
+            <li><span class="risk">想定とは全く異なるハイペースやタフな馬場になった場合、予想が外れる可能性があります。</span></li>
+        </ul>
+
+        <h2>総括</h2>
+        <p>今回の読売マイラーズカップは、少頭数ながらも実力伯仲した面白いメンバー構成となっています。レースはビーアストニッシドの単騎逃げでスローペースが予想され、最終的には瞬発力と持続力が問われる上がり勝負となるでしょう。</p>
+        <p>本命に推すグラティアスは近走で急成長中の好調馬で、京都芝1600m外回りコースへの適性も高く、想定される展開にも対応可能です。また、想定人気が7番人気と妙味十分な点も魅力です。対抗のジュンブロッサムは能力絶対値では一番手と評価でき、スローからの上がり勝負という展開は得意中の得意。単穴のセオは安定感抜群で連下には好相手となるでしょう。</p>
+        <p>レース当日は、各馬の状態、馬場状態、天候などの最新情報も考慮して、最終的な買い目を調整することをお勧めします。</p>
+    </div>
+</body>
+</html> 
